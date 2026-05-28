@@ -1,6 +1,7 @@
 import { store } from '../store.js'
 import { renderSearchBar } from '../components/search-bar.js'
 import { renderRarityFilter } from '../components/rarity-filter.js'
+import { renderInkFilter } from '../components/ink-filter.js'
 import { renderCardGrid } from '../components/card-grid.js'
 
 export function renderPromo(container) {
@@ -18,6 +19,7 @@ export function renderPromo(container) {
       <h1 class="page-title">프로모 카드</h1>
       <div id="promo-search"></div>
       <div id="promo-rarity-filter"></div>
+      <div id="promo-ink-filter"></div>
       <div class="promo-tabs" id="promo-tabs"></div>
       <p class="card-count" id="promo-count"></p>
       <div id="promo-card-grid"></div>
@@ -26,6 +28,7 @@ export function renderPromo(container) {
 
   let currentQuery = ''
   let currentRarities = []
+  let currentInks = []
   let currentSetCode = 'all'
 
   const gridContainer = container.querySelector('#promo-card-grid')
@@ -71,6 +74,11 @@ export function renderPromo(container) {
       filtered = store.filterByRarity(filtered, currentRarities)
     }
 
+    // Ink filter
+    if (currentInks.length > 0) {
+      filtered = filtered.filter(c => currentInks.includes(c.ink))
+    }
+
     filtered = store.sortByRarity(filtered)
 
     countEl.textContent = `${filtered.length}개 카드`
@@ -90,6 +98,14 @@ export function renderPromo(container) {
   renderRarityFilter(container.querySelector('#promo-rarity-filter'), {
     onFilter: (rarities) => {
       currentRarities = rarities
+      updateDisplay()
+    }
+  })
+
+  // Ink filter
+  renderInkFilter(container.querySelector('#promo-ink-filter'), {
+    onFilter: (inks) => {
+      currentInks = inks
       updateDisplay()
     }
   })

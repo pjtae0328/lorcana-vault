@@ -1,6 +1,7 @@
 import { store } from '../store.js'
 import { renderSearchBar } from '../components/search-bar.js'
 import { renderRarityFilter } from '../components/rarity-filter.js'
+import { renderInkFilter } from '../components/ink-filter.js'
 import { renderCardGrid } from '../components/card-grid.js'
 
 export function renderSetDetail(container, params) {
@@ -32,6 +33,7 @@ export function renderSetDetail(container, params) {
       </div>
       <div id="set-search"></div>
       <div id="set-rarity-filter"></div>
+      <div id="set-ink-filter"></div>
       <p class="card-count" id="card-count"></p>
       <div id="set-card-grid"></div>
     </div>
@@ -39,6 +41,7 @@ export function renderSetDetail(container, params) {
 
   let currentQuery = ''
   let currentRarities = []
+  let currentInks = []
 
   const gridContainer = container.querySelector('#set-card-grid')
   const countEl = container.querySelector('#card-count')
@@ -62,6 +65,11 @@ export function renderSetDetail(container, params) {
       filtered = store.filterByRarity(filtered, currentRarities)
     }
 
+    // Ink filter
+    if (currentInks.length > 0) {
+      filtered = filtered.filter(c => currentInks.includes(c.ink))
+    }
+
     // Sort by rarity (rarest first)
     filtered = store.sortByRarity(filtered)
 
@@ -82,6 +90,14 @@ export function renderSetDetail(container, params) {
   renderRarityFilter(container.querySelector('#set-rarity-filter'), {
     onFilter: (rarities) => {
       currentRarities = rarities
+      updateDisplay()
+    }
+  })
+
+  // Ink filter
+  renderInkFilter(container.querySelector('#set-ink-filter'), {
+    onFilter: (inks) => {
+      currentInks = inks
       updateDisplay()
     }
   })
