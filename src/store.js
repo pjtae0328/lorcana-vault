@@ -79,7 +79,11 @@ export const store = {
       const name = (c.name || '').toLowerCase()
       const version = (c.version || '').toLowerCase()
       const fullName = (c.fullName || '').toLowerCase()
+      const nameKo = (c.name_ko || '').toLowerCase()
+      const versionKo = (c.version_ko || '').toLowerCase()
+      const fullNameKo = (c.fullName_ko || '').toLowerCase()
       return name.includes(q) || version.includes(q) || fullName.includes(q)
+        || nameKo.includes(q) || versionKo.includes(q) || fullNameKo.includes(q)
     })
   },
 

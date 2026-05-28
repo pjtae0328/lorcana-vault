@@ -36,7 +36,7 @@ export function renderPromo(container) {
   tabsContainer.innerHTML = `
     <button class="promo-tab active" data-set="all">전체</button>
     ${promoSets.map(s => `
-      <button class="promo-tab" data-set="${s.code}">${s.name}</button>
+      <button class="promo-tab" data-set="${s.code}">${s.name_ko || s.name}</button>
     `).join('')}
   `
 
@@ -62,7 +62,11 @@ export function renderPromo(container) {
         const name = (c.name || '').toLowerCase()
         const version = (c.version || '').toLowerCase()
         const fullName = (c.fullName || '').toLowerCase()
+        const nameKo = (c.name_ko || '').toLowerCase()
+        const versionKo = (c.version_ko || '').toLowerCase()
+        const fullNameKo = (c.fullName_ko || '').toLowerCase()
         return name.includes(q) || version.includes(q) || fullName.includes(q)
+          || nameKo.includes(q) || versionKo.includes(q) || fullNameKo.includes(q)
       })
     }
 

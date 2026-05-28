@@ -1,4 +1,5 @@
 import { showCardModal } from './card-modal.js'
+import { showTooltip, hideTooltip, moveTooltip } from './card-tooltip.js'
 
 const RARITY_COLORS = {
   Enchanted: '#ff6bef',
@@ -52,9 +53,9 @@ export function renderCardGrid(container, cards, options = {}) {
           <span class="rarity-badge" style="background:${color}">${rarityLabel(card.rarity)}</span>
         </div>
         <div class="card-info">
-          <p class="card-name">${card.name || ''}</p>
-          ${card.version ? `<p class="card-version">${card.version}</p>` : ''}
-          ${showSetName ? `<p class="card-set-name">${card.set_name || ''}</p>` : ''}
+          <p class="card-name">${card.name_ko || card.name || ''}</p>
+          ${(card.version_ko || card.version) ? `<p class="card-version">${card.version_ko || card.version}</p>` : ''}
+          ${showSetName ? `<p class="card-set-name">${card.set_name_ko || card.set_name || ''}</p>` : ''}
           <div class="card-prices">
             ${card.prices?.usd != null ? `<span class="price-normal">${formatPrice(card.prices.usd)}</span>` : ''}
             ${card.prices?.usd_foil != null ? `<span class="price-foil">포일 ${formatPrice(card.prices.usd_foil)}</span>` : ''}
@@ -100,5 +101,28 @@ export function renderCardGrid(container, cards, options = {}) {
         showCardModal(card)
       }
     }
+  })
+
+  // Tooltip on hover (event delegation)
+  grid.addEventListener('mouseenter', (e) => {
+    const cardItem = e.target.closest('.card-item')
+    if (!cardItem) return
+    const index = parseInt(cardItem.dataset.cardIndex, 10)
+    const card = cards[index]
+    if (card) showTooltip(card, e)
+  }, true)
+
+  grid.addEventListener('mouseleave', (e) => {
+    const cardItem = e.target.closest('.card-item')
+    if (!cardItem) return
+    hideTooltip()
+  }, true)
+
+  grid.addEventListener('mousemove', (e) => {
+    const cardItem = e.target.closest('.card-item')
+    if (!cardItem) return
+    const index = parseInt(cardItem.dataset.cardIndex, 10)
+    const card = cards[index]
+    if (card) moveTooltip(e)
   })
 }

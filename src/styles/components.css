@@ -1513,3 +1513,257 @@
 @keyframes spin {
   to { transform: rotate(360deg); }
 }
+
+/* ============================================================
+   CARD TOOLTIP (hover)
+   ============================================================ */
+.card-tooltip {
+  position: absolute;
+  z-index: 10000;
+  pointer-events: none;
+  font-family: var(--font-heading), -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  max-width: 340px;
+  width: 320px;
+  transition: opacity 0.15s ease-out, transform 0.15s ease-out;
+  transform-origin: top left;
+}
+
+.card-tooltip--hidden {
+  opacity: 0;
+  transform: scale(0.95);
+  visibility: hidden;
+}
+
+.card-tooltip--visible {
+  opacity: 1;
+  transform: scale(1);
+  visibility: visible;
+}
+
+/* 글래스모피즘 컨테이너 */
+.tt-container {
+  background: rgba(18, 22, 33, 0.93);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 14px;
+  box-shadow: 0 12px 36px rgba(0, 0, 0, 0.5),
+              0 2px 8px rgba(0, 0, 0, 0.2),
+              inset 0 1px 1px rgba(255, 255, 255, 0.05);
+  color: #e2e8f0;
+  padding: 16px;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+/* 헤더 */
+.tt-header {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  padding-bottom: 10px;
+  margin-bottom: 12px;
+}
+
+.tt-title-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+}
+
+.tt-title {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #ffffff;
+  letter-spacing: -0.025em;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.tt-subtitle {
+  font-size: 0.85rem;
+  color: #a0aec0;
+  margin-top: 2px;
+  font-weight: 500;
+}
+
+.tt-meta {
+  font-size: 0.75rem;
+  color: #718096;
+  margin-top: 6px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.tt-meta-ink {
+  font-weight: 600;
+}
+
+/* 레어리티 뱃지 */
+.tt-rarity {
+  flex-shrink: 0;
+  font-size: 0.62rem;
+  font-weight: 700;
+  padding: 2px 6px;
+  border-radius: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  white-space: nowrap;
+}
+
+.tt-rarity--common { background: rgba(148, 163, 184, 0.12); color: #cbd5e1; }
+.tt-rarity--uncommon { background: rgba(34, 197, 94, 0.12); color: #4ade80; }
+.tt-rarity--rare { background: rgba(59, 130, 246, 0.12); color: #60a5fa; }
+.tt-rarity--super-rare { background: rgba(168, 85, 247, 0.12); color: #c084fc; }
+.tt-rarity--legendary { background: rgba(249, 115, 22, 0.12); color: #fb923c; border: 1px solid rgba(249, 115, 22, 0.25); }
+.tt-rarity--enchanted { background: linear-gradient(135deg, rgba(236, 72, 153, 0.15), rgba(99, 102, 241, 0.15)); color: #f472b6; border: 1px solid rgba(236, 72, 153, 0.3); text-shadow: 0 0 4px rgba(236, 72, 153, 0.4); }
+.tt-rarity--iconic { background: rgba(255, 149, 0, 0.12); color: #ff9500; border: 1px solid rgba(255, 149, 0, 0.25); }
+.tt-rarity--promo { background: rgba(255, 109, 0, 0.12); color: #ff6d00; }
+
+/* 스탯 그리드 */
+.tt-stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 8px;
+  margin-bottom: 14px;
+}
+
+.tt-stat {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 8px;
+  padding: 6px 4px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.tt-stat-label {
+  font-size: 0.62rem;
+  color: #718096;
+  text-transform: uppercase;
+  margin-bottom: 2px;
+  font-weight: 600;
+}
+
+.tt-stat-value {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+/* 스탯별 강조 색상 */
+.stat--cost { border-color: rgba(99, 102, 241, 0.25); background: rgba(99, 102, 241, 0.05); }
+.stat--cost .tt-stat-value { color: #818cf8; }
+
+.stat--str { border-color: rgba(239, 68, 68, 0.2); background: rgba(239, 68, 68, 0.04); }
+.stat--str .tt-stat-value { color: #f87171; }
+
+.stat--wil { border-color: rgba(148, 163, 184, 0.2); background: rgba(148, 163, 184, 0.04); }
+.stat--wil .tt-stat-value { color: #cbd5e1; }
+
+.stat--lore { border-color: rgba(234, 179, 8, 0.25); background: rgba(234, 179, 8, 0.05); }
+.stat--lore .tt-stat-value { color: #facc15; }
+
+/* 바디 (텍스트/플레이버) */
+.tt-body {
+  font-size: 0.85rem;
+  line-height: 1.45;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  color: #cbd5e1;
+}
+
+.tt-text {
+  background: rgba(255, 255, 255, 0.02);
+  border-left: 2px solid rgba(129, 140, 248, 0.6);
+  padding: 6px 10px;
+  border-radius: 0 6px 6px 0;
+  font-size: 0.82rem;
+  white-space: pre-line;
+}
+
+.tt-flavor {
+  font-style: italic;
+  color: #94a3b8;
+  font-size: 0.78rem;
+  padding: 4px 6px;
+  border-radius: 4px;
+  background: rgba(0, 0, 0, 0.1);
+  line-height: 1.35;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* 푸터 */
+.tt-footer {
+  margin-top: 12px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  padding-top: 8px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 4px;
+  font-size: 0.7rem;
+  color: #64748b;
+}
+
+.tt-footer-row {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 4px;
+}
+
+.tt-set {
+  color: #818cf8;
+  font-size: 0.72rem;
+  font-weight: 500;
+}
+
+.tt-inkwell {
+  color: #818cf8;
+  font-weight: 600;
+  font-size: 0.68rem;
+}
+
+.tt-original {
+  text-align: right;
+  font-style: normal;
+  max-width: 180px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* 포맷 합법 여부 배지 */
+.tt-formats {
+  display: flex;
+  gap: 4px;
+}
+
+.tt-format {
+  font-size: 0.62rem;
+  font-weight: 600;
+  padding: 1px 5px;
+  border-radius: 3px;
+  letter-spacing: 0.02em;
+}
+
+.tt-legal {
+  background: rgba(34, 197, 94, 0.15);
+  color: #4ade80;
+}
+
+.tt-banned {
+  background: rgba(239, 68, 68, 0.15);
+  color: #f87171;
+}
+

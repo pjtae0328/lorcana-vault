@@ -49,8 +49,9 @@ export function showCardModal(card) {
         </div>
         <div class="modal-info-section">
           <div class="modal-header">
-            <h2 class="modal-card-name">${card.name || ''}</h2>
-            ${card.version ? `<p class="modal-card-version">${card.version}</p>` : ''}
+            <h2 class="modal-card-name">${card.name_ko || card.name || ''}</h2>
+            ${(card.version_ko || card.version) ? `<p class="modal-card-version">${card.version_ko || card.version}</p>` : ''}
+            ${(card.name_ko && card.fullName) ? `<p class="modal-card-name-en" style="font-size:0.8rem;opacity:0.5;margin-top:0.2rem">${card.fullName}</p>` : ''}
             <span class="rarity-badge rarity-badge-lg" style="background:${color}">${rarityLabel(card.rarity)}</span>
           </div>
 
@@ -63,17 +64,17 @@ export function showCardModal(card) {
             ${renderStatItem('잉크웰', card.inkwell ? '✓' : '✗')}
           </div>
 
-          ${card.text ? `
+          ${(card.text_ko || card.text) ? `
             <div class="modal-section">
               <h3 class="modal-section-title">카드 텍스트</h3>
-              <p class="modal-card-text">${card.text}</p>
+              <p class="modal-card-text">${card.text_ko || card.text}</p>
             </div>
           ` : ''}
 
           ${card.classifications && card.classifications.length > 0 ? `
             <div class="modal-section">
               <h3 class="modal-section-title">분류</h3>
-              <p class="modal-classifications">${card.classifications.join(' · ')}</p>
+              <p class="modal-classifications">${(card.classifications_ko || card.classifications).join(' · ')}</p>
             </div>
           ` : ''}
 
@@ -86,9 +87,9 @@ export function showCardModal(card) {
             </div>
           ` : ''}
 
-          ${card.flavor_text ? `
+          ${(card.flavor_text_ko || card.flavor_text) ? `
             <div class="modal-section">
-              <p class="modal-flavor-text">${card.flavor_text}</p>
+              <p class="modal-flavor-text">${card.flavor_text_ko || card.flavor_text}</p>
             </div>
           ` : ''}
 
@@ -101,7 +102,7 @@ export function showCardModal(card) {
           ${card.set_name ? `
             <div class="modal-section">
               <h3 class="modal-section-title">수록 세트</h3>
-              <a href="#/set/${card.set_code}" class="modal-set-link">${card.set_name}</a>
+              <a href="#/set/${card.set_code}" class="modal-set-link">${card.set_name_ko || card.set_name}</a>
               ${card.collector_number ? `<span class="modal-collector-num">#${card.collector_number}</span>` : ''}
             </div>
           ` : ''}
@@ -143,7 +144,7 @@ export function showCardModal(card) {
 
           ${card.type && card.type.length > 0 ? `
             <div class="modal-section">
-              <p class="modal-card-type">유형: ${card.type.join(' / ')}</p>
+              <p class="modal-card-type">유형: ${(card.type_ko || card.type).join(' / ')}</p>
             </div>
           ` : ''}
         </div>

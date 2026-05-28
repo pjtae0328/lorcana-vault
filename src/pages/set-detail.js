@@ -23,7 +23,7 @@ export function renderSetDetail(container, params) {
     <div class="container section">
       <a href="#/" class="back-link">← 전체 세트</a>
       <div class="set-header">
-        <h1 class="set-title">${set.name}</h1>
+        <h1 class="set-title">${set.name_ko || set.name}</h1>
         <div class="set-meta-info">
           <span class="set-release">${set.released_at || ''}</span>
           <span class="set-divider">·</span>
@@ -53,7 +53,11 @@ export function renderSetDetail(container, params) {
         const name = (c.name || '').toLowerCase()
         const version = (c.version || '').toLowerCase()
         const fullName = (c.fullName || '').toLowerCase()
+        const nameKo = (c.name_ko || '').toLowerCase()
+        const versionKo = (c.version_ko || '').toLowerCase()
+        const fullNameKo = (c.fullName_ko || '').toLowerCase()
         return name.includes(q) || version.includes(q) || fullName.includes(q)
+          || nameKo.includes(q) || versionKo.includes(q) || fullNameKo.includes(q)
       })
     }
 
@@ -71,7 +75,7 @@ export function renderSetDetail(container, params) {
 
   // Search bar
   renderSearchBar(container.querySelector('#set-search'), {
-    placeholder: `${set.name} 카드 검색...`,
+    placeholder: `${set.name_ko || set.name} 카드 검색...`,
     onSearch: (query) => {
       currentQuery = query
       updateDisplay()

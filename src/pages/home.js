@@ -80,10 +80,10 @@ export function renderHome(container) {
     return `
       <a href="#/set/${set.code}" class="set-card" data-code="${set.code}">
         <div class="set-card-image-wrap">
-          ${imgSrc ? `<img src="${imgSrc}" alt="${set.name}" class="set-card-image" loading="lazy" />` : '<div class="set-card-placeholder">🃏</div>'}
+          ${imgSrc ? `<img src="${imgSrc}" alt="${set.name_ko || set.name}" class="set-card-image" loading="lazy" />` : '<div class="set-card-placeholder">🃏</div>'}
         </div>
         <div class="set-card-info">
-          <h3 class="set-card-name">${set.name}</h3>
+          <h3 class="set-card-name">${set.code}. ${set.name_ko || set.name}</h3>
           <p class="set-card-meta">${set.released_at || ''} · ${set.card_count}장</p>
         </div>
       </a>
@@ -101,10 +101,10 @@ export function renderHome(container) {
     return `
       <a href="#/set/${set.code}" class="set-card set-card-promo">
         <div class="set-card-image-wrap">
-          ${imgSrc ? `<img src="${imgSrc}" alt="${set.name}" class="set-card-image" loading="lazy" />` : '<div class="set-card-placeholder">🎁</div>'}
+          ${imgSrc ? `<img src="${imgSrc}" alt="${set.name_ko || set.name}" class="set-card-image" loading="lazy" />` : '<div class="set-card-placeholder">🎁</div>'}
         </div>
         <div class="set-card-info">
-          <h3 class="set-card-name">${set.name}</h3>
+          <h3 class="set-card-name">${set.name_ko || set.name}</h3>
           <p class="set-card-meta">${set.card_count}장</p>
         </div>
       </a>

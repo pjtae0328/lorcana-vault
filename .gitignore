@@ -20,3 +20,6 @@ oma-test-helpers.ts
 verify-deliverables.sh
 .integration-test-style/
 .unit-test-style/
+
+# Example data
+lorcana-kor/
