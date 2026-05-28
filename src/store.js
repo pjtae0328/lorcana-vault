@@ -17,10 +17,10 @@ export const store = {
     if (this._initialized) return
 
     const [setsRes, cardsRes, psaRes, newsRes] = await Promise.all([
-      fetch('/data/sets.json'),
-      fetch('/data/cards.json'),
-      fetch('/data/psa-pop.json'),
-      fetch('/data/promo-news.json')
+      fetch('./data/sets.json'),
+      fetch('./data/cards.json'),
+      fetch('./data/psa-pop.json'),
+      fetch('./data/promo-news.json')
     ])
 
     this.sets = await setsRes.json()
