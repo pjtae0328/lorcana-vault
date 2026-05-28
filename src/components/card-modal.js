@@ -69,11 +69,11 @@ export function showCardModal(card) {
         </div>
         <div class="modal-info-section">
           <div class="modal-header">
-            <h2 class="modal-card-name" data-en="${card.name || ''}" data-ko="${card.name_ko || card.name || ''}">${card.name || ''}</h2>
-            ${card.version ? `<p class="modal-card-version" data-en="${card.version}" data-ko="${card.version_ko || card.version}">${card.version}</p>` : ''}
+            <h2 class="modal-card-name" data-en="${card.name || ''}" data-ko="${card.name_ko || card.name || ''}">${card.name_ko || card.name || ''}</h2>
+            ${card.version ? `<p class="modal-card-version" data-en="${card.version}" data-ko="${card.version_ko || card.version}">${card.version_ko || card.version}</p>` : ''}
             <div class="modal-header-actions">
               <span class="rarity-badge rarity-badge-lg" style="background:${color}">${rarityLabel(card.rarity)}</span>
-              ${hasKo ? `<button class="lang-toggle" data-lang="en" aria-label="한/영 전환">EN → KO</button>` : ''}
+              ${hasKo ? `<button class="lang-toggle" data-lang="ko" aria-label="한/영 전환">KO → EN</button>` : ''}
             </div>
           </div>
 
@@ -89,14 +89,14 @@ export function showCardModal(card) {
           ${card.text ? `
             <div class="modal-section">
               <h3 class="modal-section-title">카드 텍스트</h3>
-              <p class="modal-card-text" data-en="${replaceSymbols(card.text).replace(/"/g, '&quot;')}" data-ko="${replaceSymbols(card.text_ko || card.text).replace(/"/g, '&quot;')}">${replaceSymbols(card.text)}</p>
+              <p class="modal-card-text" data-en="${replaceSymbols(card.text).replace(/"/g, '&quot;')}" data-ko="${replaceSymbols(card.text_ko || card.text).replace(/"/g, '&quot;')}">${replaceSymbols(card.text_ko || card.text)}</p>
             </div>
           ` : ''}
 
           ${card.classifications && card.classifications.length > 0 ? `
             <div class="modal-section">
               <h3 class="modal-section-title">분류</h3>
-              <p class="modal-classifications" data-en="${card.classifications.join(' · ')}" data-ko="${(card.classifications_ko || card.classifications).join(' · ')}">${card.classifications.join(' · ')}</p>
+              <p class="modal-classifications" data-en="${card.classifications.join(' · ')}" data-ko="${(card.classifications_ko || card.classifications).join(' · ')}">${(card.classifications_ko || card.classifications).join(' · ')}</p>
             </div>
           ` : ''}
 
@@ -111,7 +111,7 @@ export function showCardModal(card) {
 
           ${card.flavor_text ? `
             <div class="modal-section">
-              <p class="modal-flavor-text" data-en="${card.flavor_text.replace(/"/g, '&quot;')}" data-ko="${(card.flavor_text_ko || card.flavor_text).replace(/"/g, '&quot;')}">${card.flavor_text}</p>
+              <p class="modal-flavor-text" data-en="${card.flavor_text.replace(/"/g, '&quot;')}" data-ko="${(card.flavor_text_ko || card.flavor_text).replace(/"/g, '&quot;')}">${card.flavor_text_ko || card.flavor_text}</p>
             </div>
           ` : ''}
 
@@ -166,7 +166,7 @@ export function showCardModal(card) {
 
           ${card.type && card.type.length > 0 ? `
             <div class="modal-section">
-              <p class="modal-card-type" data-en="유형: ${card.type.join(' / ')}" data-ko="유형: ${(card.type_ko || card.type).join(' / ')}">유형: ${card.type.join(' / ')}</p>
+              <p class="modal-card-type" data-en="유형: ${card.type.join(' / ')}" data-ko="유형: ${(card.type_ko || card.type).join(' / ')}">유형: ${(card.type_ko || card.type).join(' / ')}</p>
             </div>
           ` : ''}
         </div>
