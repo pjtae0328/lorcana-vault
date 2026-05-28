@@ -146,15 +146,15 @@ export function showTooltip(card, e) {
 }
 
 export function hideTooltip() {
-  if (hideTimer) clearTimeout(hideTimer)
-  hideTimer = setTimeout(() => {
-    if (tooltipEl) {
-      tooltipEl.classList.remove('card-tooltip--visible')
-      tooltipEl.classList.add('card-tooltip--hidden')
-    }
-    currentCard = null
+  if (hideTimer) {
+    clearTimeout(hideTimer)
     hideTimer = null
-  }, 50)
+  }
+  if (tooltipEl) {
+    tooltipEl.classList.remove('card-tooltip--visible')
+    tooltipEl.classList.add('card-tooltip--hidden')
+  }
+  currentCard = null
 }
 
 export function moveTooltip(e) {
