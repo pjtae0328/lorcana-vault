@@ -1,0 +1,22 @@
+node_modules/
+dist/
+.DS_Store
+*.log
+
+# AI agent configs
+.agents/
+.gemini/
+.codex/
+.claude/
+.cursor/
+.qwen/
+.serena/
+.github/prompts/
+.github/skills/
+AGENTS.md
+GEMINI.md
+CLAUDE.md
+oma-test-helpers.ts
+verify-deliverables.sh
+.integration-test-style/
+.unit-test-style/

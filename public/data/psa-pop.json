@@ -1,0 +1,5 @@
+{
+  "notes": "PSA 10 Population 데이터. tcgplayer_id를 키로 사용합니다. 수동으로 업데이트하거나 GemRate API 연동 시 자동화 가능합니다.",
+  "last_updated": "2026-05-28",
+  "data": {}
+}

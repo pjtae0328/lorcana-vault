@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lorcana Vault — Disney Lorcana Card Catalog</title>
+  <meta name="description" content="Disney Lorcana TCG 카드 카탈로그. 모든 챕터별 카드 리스트, PSA 10 등급, 시세, 프로모 카드 정보를 확인하세요." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🏰</text></svg>" />
+</head>
+<body>
+  <div id="app">
+    <nav id="main-nav"></nav>
+    <main id="page-content">
+      <div class="loading-screen" id="initial-loader">
+        <div class="loading-spinner"></div>
+        <p class="loading-text">Entering the Great Illuminary...</p>
+      </div>
+    </main>
+    <div id="card-modal-overlay" class="modal-overlay hidden"></div>
+  </div>
+  <script type="module" src="/src/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,704 @@
+/* ============================================================
+   DISNEY LORCANA CARD CATALOG — Animations & Transitions
+   ============================================================ */
+
+/* ============================================================
+   KEYFRAMES
+   ============================================================ */
+
+/* Card Shimmer — Holographic sweep for Enchanted cards and skeleton loading */
+@keyframes card-shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+/* Float — Subtle floating for hero particles and decorative elements */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0) translateX(0);
+  }
+  25% {
+    transform: translateY(-8px) translateX(4px);
+  }
+  50% {
+    transform: translateY(-4px) translateX(-2px);
+  }
+  75% {
+    transform: translateY(-12px) translateX(2px);
+  }
+}
+
+/* Float Slow — Slower, gentler float for background elements */
+@keyframes float-slow {
+  0%, 100% {
+    transform: translateY(0) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-16px) rotate(1deg);
+  }
+}
+
+/* Pulse Glow — Pulsing glow for highlighted interactive items */
+@keyframes pulse-glow {
+  0%, 100% {
+    box-shadow: 0 0 8px rgba(139, 92, 246, 0.2);
+  }
+  50% {
+    box-shadow: 0 0 24px rgba(139, 92, 246, 0.5), 0 0 48px rgba(139, 92, 246, 0.15);
+  }
+}
+
+/* Pulse Glow Gold — Gold variant for legendary items */
+@keyframes pulse-glow-gold {
+  0%, 100% {
+    box-shadow: 0 0 8px rgba(240, 180, 41, 0.2);
+  }
+  50% {
+    box-shadow: 0 0 24px rgba(240, 180, 41, 0.5), 0 0 48px rgba(240, 180, 41, 0.15);
+  }
+}
+
+/* Fade In — Standard page content entrance */
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Fade In Up — Content fades in while sliding up */
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Fade In Down — Content fades in while sliding down */
+@keyframes fade-in-down {
+  from {
+    opacity: 0;
+    transform: translateY(-16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Fade In Scale — Content fades in with subtle scale */
+@keyframes fade-in-scale {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Slide Up — Modal entrance from below */
+@keyframes slide-up {
+  from {
+    opacity: 0;
+    transform: translateY(32px) scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* Slide Down — Modal exit downward */
+@keyframes slide-down {
+  from {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(24px) scale(0.97);
+  }
+}
+
+/* Slide In Right — Sidebar or panel entrance */
+@keyframes slide-in-right {
+  from {
+    opacity: 0;
+    transform: translateX(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Slide In Left — Navigation or panel entrance */
+@keyframes slide-in-left {
+  from {
+    opacity: 0;
+    transform: translateX(-24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Spin — Loading spinner rotation */
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Gradient Shift — Moving gradient for Enchanted/Iconic card borders */
+@keyframes gradient-shift {
+  0% {
+    filter: hue-rotate(0deg);
+  }
+  100% {
+    filter: hue-rotate(360deg);
+  }
+}
+
+/* Rainbow Border — Full rainbow cycle for enchanted items */
+@keyframes rainbow-border {
+  0% {
+    border-color: #ff6b6b;
+    box-shadow: 0 0 16px rgba(255, 107, 107, 0.2);
+  }
+  16% {
+    border-color: #ffd93d;
+    box-shadow: 0 0 16px rgba(255, 217, 61, 0.2);
+  }
+  33% {
+    border-color: #6bcb77;
+    box-shadow: 0 0 16px rgba(107, 203, 119, 0.2);
+  }
+  50% {
+    border-color: #4d96ff;
+    box-shadow: 0 0 16px rgba(77, 150, 255, 0.2);
+  }
+  66% {
+    border-color: #9b59b6;
+    box-shadow: 0 0 16px rgba(155, 89, 182, 0.2);
+  }
+  83% {
+    border-color: #e74c3c;
+    box-shadow: 0 0 16px rgba(231, 76, 60, 0.2);
+  }
+  100% {
+    border-color: #ff6b6b;
+    box-shadow: 0 0 16px rgba(255, 107, 107, 0.2);
+  }
+}
+
+/* Sparkle — Twinkling star effect */
+@keyframes sparkle {
+  0%, 100% {
+    opacity: 0;
+    transform: scale(0) rotate(0deg);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1) rotate(180deg);
+  }
+}
+
+/* Breathe — Subtle size pulsation */
+@keyframes breathe {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.02);
+  }
+}
+
+/* Ripple — Click ripple effect */
+@keyframes ripple {
+  0% {
+    transform: scale(0);
+    opacity: 0.5;
+  }
+  100% {
+    transform: scale(4);
+    opacity: 0;
+  }
+}
+
+/* Shake — Error/validation feedback */
+@keyframes shake {
+  0%, 100% {
+    transform: translateX(0);
+  }
+  10%, 30%, 50%, 70%, 90% {
+    transform: translateX(-4px);
+  }
+  20%, 40%, 60%, 80% {
+    transform: translateX(4px);
+  }
+}
+
+/* Bounce In — Playful entrance */
+@keyframes bounce-in {
+  0% {
+    opacity: 0;
+    transform: scale(0.3);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.05);
+  }
+  70% {
+    transform: scale(0.95);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* Counter tick — Number counting animation */
+@keyframes count-up {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ============================================================
+   3D CARD TILT — Perspective Transform on Hover
+   ============================================================ */
+.card-tilt-3d {
+  transform-style: preserve-3d;
+  perspective: 1000px;
+  transition: transform var(--transition-slow);
+}
+
+.card-tilt-3d:hover {
+  transform: rotateY(-3deg) rotateX(2deg) translateZ(8px);
+}
+
+.card-tilt-3d__inner {
+  transform-style: preserve-3d;
+  transition: transform var(--transition-slow);
+}
+
+.card-tilt-3d:hover .card-tilt-3d__inner {
+  transform: translateZ(20px);
+}
+
+/* Advanced 3D tilt with shine effect */
+.card-tilt-3d--shine {
+  position: relative;
+  overflow: hidden;
+}
+
+.card-tilt-3d--shine::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    105deg,
+    transparent 35%,
+    rgba(255, 255, 255, 0.04) 40%,
+    rgba(255, 255, 255, 0.08) 45%,
+    rgba(255, 255, 255, 0.04) 50%,
+    transparent 55%
+  );
+  transform: translateX(-100%);
+  transition: transform 0.6s ease;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.card-tilt-3d--shine:hover::before {
+  transform: translateX(100%);
+}
+
+/* Holographic overlay for enchanted cards */
+.card-holo {
+  position: relative;
+  overflow: hidden;
+}
+
+.card-holo::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(
+      125deg,
+      rgba(255, 107, 107, 0) 0%,
+      rgba(255, 107, 107, 0.06) 15%,
+      rgba(255, 217, 61, 0.06) 25%,
+      rgba(107, 203, 119, 0.06) 40%,
+      rgba(77, 150, 255, 0.06) 55%,
+      rgba(155, 89, 182, 0.06) 70%,
+      rgba(255, 107, 107, 0.06) 85%,
+      rgba(255, 107, 107, 0) 100%
+    );
+  background-size: 200% 100%;
+  animation: card-shimmer 4s linear infinite;
+  pointer-events: none;
+  z-index: 1;
+  border-radius: inherit;
+  mix-blend-mode: screen;
+}
+
+/* ============================================================
+   PAGE TRANSITIONS
+   ============================================================ */
+.page-enter {
+  animation: fade-in-up 0.5s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+.page-leave {
+  animation: fade-in-up 0.3s cubic-bezier(0.22, 1, 0.36, 1) reverse forwards;
+}
+
+/* Staggered page entrance for grid items */
+.stagger-enter > * {
+  animation: fade-in-up 0.5s cubic-bezier(0.22, 1, 0.36, 1) backwards;
+}
+
+.stagger-enter > *:nth-child(1) { animation-delay: 0ms; }
+.stagger-enter > *:nth-child(2) { animation-delay: 50ms; }
+.stagger-enter > *:nth-child(3) { animation-delay: 100ms; }
+.stagger-enter > *:nth-child(4) { animation-delay: 150ms; }
+.stagger-enter > *:nth-child(5) { animation-delay: 200ms; }
+.stagger-enter > *:nth-child(6) { animation-delay: 250ms; }
+.stagger-enter > *:nth-child(7) { animation-delay: 300ms; }
+.stagger-enter > *:nth-child(8) { animation-delay: 350ms; }
+.stagger-enter > *:nth-child(9) { animation-delay: 400ms; }
+.stagger-enter > *:nth-child(10) { animation-delay: 450ms; }
+.stagger-enter > *:nth-child(11) { animation-delay: 500ms; }
+.stagger-enter > *:nth-child(12) { animation-delay: 550ms; }
+.stagger-enter > *:nth-child(n+13) { animation-delay: 600ms; }
+
+/* Fast stagger for smaller items */
+.stagger-fast > * {
+  animation: fade-in-up 0.35s cubic-bezier(0.22, 1, 0.36, 1) backwards;
+}
+
+.stagger-fast > *:nth-child(1) { animation-delay: 0ms; }
+.stagger-fast > *:nth-child(2) { animation-delay: 30ms; }
+.stagger-fast > *:nth-child(3) { animation-delay: 60ms; }
+.stagger-fast > *:nth-child(4) { animation-delay: 90ms; }
+.stagger-fast > *:nth-child(5) { animation-delay: 120ms; }
+.stagger-fast > *:nth-child(6) { animation-delay: 150ms; }
+.stagger-fast > *:nth-child(7) { animation-delay: 180ms; }
+.stagger-fast > *:nth-child(8) { animation-delay: 210ms; }
+.stagger-fast > *:nth-child(n+9) { animation-delay: 240ms; }
+
+/* ============================================================
+   MODAL TRANSITIONS
+   ============================================================ */
+.modal-enter {
+  animation: slide-up 0.4s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+.modal-leave {
+  animation: slide-down 0.3s cubic-bezier(0.4, 0, 1, 1) forwards;
+}
+
+.modal-overlay-enter {
+  animation: fade-in 0.25s ease forwards;
+}
+
+.modal-overlay-leave {
+  animation: fade-in 0.2s ease reverse forwards;
+}
+
+/* ============================================================
+   ANIMATION UTILITY CLASSES
+   ============================================================ */
+
+/* Basic animations */
+.animate-fade-in {
+  animation: fade-in 0.5s ease forwards;
+}
+
+.animate-fade-in-up {
+  animation: fade-in-up 0.5s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+.animate-fade-in-down {
+  animation: fade-in-down 0.5s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+.animate-fade-in-scale {
+  animation: fade-in-scale 0.4s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+.animate-slide-in-right {
+  animation: slide-in-right 0.5s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+.animate-slide-in-left {
+  animation: slide-in-left 0.5s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+.animate-bounce-in {
+  animation: bounce-in 0.6s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+.animate-shake {
+  animation: shake 0.5s ease forwards;
+}
+
+/* Looping animations */
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+.animate-float-slow {
+  animation: float-slow 8s ease-in-out infinite;
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 2s ease-in-out infinite;
+}
+
+.animate-pulse-glow-gold {
+  animation: pulse-glow-gold 2s ease-in-out infinite;
+}
+
+.animate-breathe {
+  animation: breathe 3s ease-in-out infinite;
+}
+
+.animate-spin {
+  animation: spin 1s linear infinite;
+}
+
+.animate-shimmer {
+  background: linear-gradient(
+    90deg,
+    var(--bg-tertiary) 25%,
+    rgba(60, 65, 120, 0.5) 50%,
+    var(--bg-tertiary) 75%
+  );
+  background-size: 200% 100%;
+  animation: card-shimmer 1.5s ease-in-out infinite;
+}
+
+.animate-rainbow-border {
+  animation: rainbow-border 4s linear infinite;
+}
+
+/* Animation delay utilities */
+.delay-100 { animation-delay: 100ms; }
+.delay-200 { animation-delay: 200ms; }
+.delay-300 { animation-delay: 300ms; }
+.delay-400 { animation-delay: 400ms; }
+.delay-500 { animation-delay: 500ms; }
+.delay-700 { animation-delay: 700ms; }
+.delay-1000 { animation-delay: 1000ms; }
+
+/* Animation duration utilities */
+.duration-fast { animation-duration: 200ms; }
+.duration-normal { animation-duration: 400ms; }
+.duration-slow { animation-duration: 600ms; }
+.duration-slower { animation-duration: 1000ms; }
+
+/* Animation fill mode */
+.fill-forwards { animation-fill-mode: forwards; }
+.fill-backwards { animation-fill-mode: backwards; }
+.fill-both { animation-fill-mode: both; }
+
+/* ============================================================
+   HOVER MICRO-INTERACTIONS
+   ============================================================ */
+
+/* Lift on hover */
+.hover-lift {
+  transition: transform var(--transition-normal), box-shadow var(--transition-normal);
+}
+
+.hover-lift:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-card);
+}
+
+/* Scale on hover */
+.hover-scale {
+  transition: transform var(--transition-normal);
+}
+
+.hover-scale:hover {
+  transform: scale(1.03);
+}
+
+/* Glow on hover */
+.hover-glow {
+  transition: box-shadow var(--transition-normal);
+}
+
+.hover-glow:hover {
+  box-shadow: var(--shadow-glow);
+}
+
+.hover-glow-gold:hover {
+  box-shadow: var(--shadow-glow-gold);
+}
+
+/* Shine sweep on hover */
+.hover-shine {
+  position: relative;
+  overflow: hidden;
+}
+
+.hover-shine::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -60%;
+  width: 40%;
+  height: 200%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.05),
+    transparent
+  );
+  transform: rotate(25deg);
+  transition: left 0.5s ease;
+  pointer-events: none;
+}
+
+.hover-shine:hover::after {
+  left: 120%;
+}
+
+/* Border glow on hover */
+.hover-border-glow {
+  transition: border-color var(--transition-normal), box-shadow var(--transition-normal);
+}
+
+.hover-border-glow:hover {
+  border-color: rgba(139, 92, 246, 0.3);
+  box-shadow: 0 0 16px rgba(139, 92, 246, 0.1);
+}
+
+/* ============================================================
+   SCROLL-TRIGGERED ANIMATIONS (IntersectionObserver classes)
+   ============================================================ */
+
+/* Hidden state for scroll-reveal */
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition:
+    opacity 0.6s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.reveal.revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.reveal-scale {
+  opacity: 0;
+  transform: scale(0.92);
+  transition:
+    opacity 0.5s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.reveal-scale.revealed {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.reveal-left {
+  opacity: 0;
+  transform: translateX(-32px);
+  transition:
+    opacity 0.6s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.reveal-left.revealed {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.reveal-right {
+  opacity: 0;
+  transform: translateX(32px);
+  transition:
+    opacity 0.6s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.reveal-right.revealed {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Stagger delay for scroll reveal children */
+.reveal-stagger > .reveal:nth-child(1) { transition-delay: 0ms; }
+.reveal-stagger > .reveal:nth-child(2) { transition-delay: 80ms; }
+.reveal-stagger > .reveal:nth-child(3) { transition-delay: 160ms; }
+.reveal-stagger > .reveal:nth-child(4) { transition-delay: 240ms; }
+.reveal-stagger > .reveal:nth-child(5) { transition-delay: 320ms; }
+.reveal-stagger > .reveal:nth-child(6) { transition-delay: 400ms; }
+.reveal-stagger > .reveal:nth-child(n+7) { transition-delay: 480ms; }
+
+/* ============================================================
+   REDUCED MOTION — Disable all animations
+   ============================================================ */
+@media (prefers-reduced-motion: reduce) {
+  .card-tilt-3d:hover,
+  .card-tilt-3d:hover .card-tilt-3d__inner {
+    transform: none;
+  }
+
+  .card-tilt-3d--shine::before {
+    display: none;
+  }
+
+  .card-holo::after {
+    display: none;
+  }
+
+  .hover-lift:hover { transform: none; }
+  .hover-scale:hover { transform: none; }
+  .hover-shine::after { display: none; }
+
+  .reveal,
+  .reveal-scale,
+  .reveal-left,
+  .reveal-right {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+
+  .stagger-enter > *,
+  .stagger-fast > * {
+    animation: none;
+    opacity: 1;
+  }
+}
