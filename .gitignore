@@ -20,4 +20,3 @@ oma-test-helpers.ts
 verify-deliverables.sh
 .integration-test-style/
 .unit-test-style/
-.github/workflows/
