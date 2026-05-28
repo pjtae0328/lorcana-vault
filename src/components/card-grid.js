@@ -53,9 +53,9 @@ export function renderCardGrid(container, cards, options = {}) {
           <span class="rarity-badge" style="background:${color}">${rarityLabel(card.rarity)}</span>
         </div>
         <div class="card-info">
-          <p class="card-name">${card.name_ko || card.name || ''}</p>
-          ${(card.version_ko || card.version) ? `<p class="card-version">${card.version_ko || card.version}</p>` : ''}
-          ${showSetName ? `<p class="card-set-name">${card.set_name_ko || card.set_name || ''}</p>` : ''}
+          <p class="card-name">${card.name || ''}</p>
+          ${card.version ? `<p class="card-version">${card.version}</p>` : ''}
+          ${showSetName ? `<p class="card-set-name">${card.set_name || ''}</p>` : ''}
           <div class="card-prices">
             ${card.prices?.usd != null ? `<span class="price-normal">${formatPrice(card.prices.usd)}</span>` : ''}
             ${card.prices?.usd_foil != null ? `<span class="price-foil">포일 ${formatPrice(card.prices.usd_foil)}</span>` : ''}
