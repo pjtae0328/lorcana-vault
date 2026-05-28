@@ -27,6 +27,23 @@ function renderStatItem(label, value) {
   return `<div class="stat-item"><span class="stat-label">${label}</span><span class="stat-value">${value}</span></div>`
 }
 
+// 게임 기호 치환
+const SYMBOL_MAP = {
+  '{I}': '⬡',
+  '{E}': '⟳',
+  '{S}': '💪',
+  '{W}': '🛡️',
+  '{L}': '◊',
+  '{IW}': '⬡✓',
+  '{1}': '①',
+  '{2}': '②'
+}
+
+function replaceSymbols(text) {
+  if (!text) return ''
+  return text.replace(/\{[^}]+\}/g, m => SYMBOL_MAP[m] || m)
+}
+
 export function showCardModal(card) {
   if (!card) return
 
@@ -52,12 +69,12 @@ export function showCardModal(card) {
         </div>
         <div class="modal-info-section">
           <div class="modal-header">
-            <div class="modal-header-top">
-              <h2 class="modal-card-name" data-en="${card.name || ''}" data-ko="${card.name_ko || card.name || ''}">${card.name || ''}</h2>
-              ${hasKo ? `<button class="lang-toggle" data-lang="en" aria-label="한/영 전환">EN</button>` : ''}
-            </div>
+            <h2 class="modal-card-name" data-en="${card.name || ''}" data-ko="${card.name_ko || card.name || ''}">${card.name || ''}</h2>
             ${card.version ? `<p class="modal-card-version" data-en="${card.version}" data-ko="${card.version_ko || card.version}">${card.version}</p>` : ''}
-            <span class="rarity-badge rarity-badge-lg" style="background:${color}">${rarityLabel(card.rarity)}</span>
+            <div class="modal-header-actions">
+              <span class="rarity-badge rarity-badge-lg" style="background:${color}">${rarityLabel(card.rarity)}</span>
+              ${hasKo ? `<button class="lang-toggle" data-lang="en" aria-label="한/영 전환">EN → KO</button>` : ''}
+            </div>
           </div>
 
           <div class="modal-stats">
@@ -72,7 +89,7 @@ export function showCardModal(card) {
           ${card.text ? `
             <div class="modal-section">
               <h3 class="modal-section-title">카드 텍스트</h3>
-              <p class="modal-card-text" data-en="${(card.text || '').replace(/"/g, '&quot;')}" data-ko="${(card.text_ko || card.text || '').replace(/"/g, '&quot;')}">${card.text}</p>
+              <p class="modal-card-text" data-en="${replaceSymbols(card.text).replace(/"/g, '&quot;')}" data-ko="${replaceSymbols(card.text_ko || card.text).replace(/"/g, '&quot;')}">${replaceSymbols(card.text)}</p>
             </div>
           ` : ''}
 
@@ -167,7 +184,7 @@ export function showCardModal(card) {
       const current = langBtn.dataset.lang
       const next = current === 'en' ? 'ko' : 'en'
       langBtn.dataset.lang = next
-      langBtn.textContent = next === 'en' ? 'EN' : 'KO'
+      langBtn.textContent = next === 'en' ? 'EN → KO' : 'KO → EN'
 
       // 전환 대상 요소 업데이트
       overlay.querySelectorAll('[data-en][data-ko]').forEach(el => {
