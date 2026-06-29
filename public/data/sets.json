@@ -188,5 +188,15 @@
     "is_promo": false,
     "card_count": 242,
     "logo_url": "https://static.wikia.nocookie.net/lorcana/images/d/d7/Wilds_Unknown_logo.jpg/revision/latest?cb=20260301200000"
+  },
+  {
+    "id": "set_57c6817823c14dda8eccbca4b555d858",
+    "name": "Attack of the Vine!",
+    "code": "13",
+    "released_at": "2026-07-17",
+    "is_main": true,
+    "is_promo": false,
+    "card_count": 60,
+    "logo_url": ""
   }
 ]
