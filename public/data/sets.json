@@ -198,5 +198,15 @@
     "is_promo": false,
     "card_count": 245,
     "logo_url": ""
+  },
+  {
+    "id": "set_ea7d596e608340e3a383b868050b94c4",
+    "name": "Format Coconut",
+    "code": "[Coconut]",
+    "released_at": "2026-07-28",
+    "is_main": false,
+    "is_promo": true,
+    "card_count": 1,
+    "logo_url": ""
   }
 ]
