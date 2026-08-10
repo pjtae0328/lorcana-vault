@@ -60,16 +60,6 @@
     "logo_url": ""
   },
   {
-    "id": "set_c64f092e725a4f66966f43af3aa161b6",
-    "name": "Shimmering Skies",
-    "code": "5",
-    "released_at": "2024-08-09",
-    "is_main": true,
-    "is_promo": false,
-    "card_count": 223,
-    "logo_url": "https://static.wikia.nocookie.net/lorcana/images/0/02/Shimmering_Skies_logo.jpg/revision/latest?cb=20240627172834"
-  },
-  {
     "id": "set_1fd69818f6e44dd79e922f403aa4f6d9",
     "name": "Promo Set 2",
     "code": "P2",
@@ -78,6 +68,16 @@
     "is_promo": true,
     "card_count": 39,
     "logo_url": ""
+  },
+  {
+    "id": "set_c64f092e725a4f66966f43af3aa161b6",
+    "name": "Shimmering Skies",
+    "code": "5",
+    "released_at": "2024-08-09",
+    "is_main": true,
+    "is_promo": false,
+    "card_count": 223,
+    "logo_url": "https://static.wikia.nocookie.net/lorcana/images/0/02/Shimmering_Skies_logo.jpg/revision/latest?cb=20240627172834"
   },
   {
     "id": "set_ec81a739fb204f10b31dc649c535c82e",
@@ -126,7 +126,7 @@
     "released_at": "2025-08-18",
     "is_main": false,
     "is_promo": true,
-    "card_count": 55,
+    "card_count": 56,
     "logo_url": ""
   },
   {
@@ -150,16 +150,6 @@
     "logo_url": "https://static.wikia.nocookie.net/lorcana/images/9/9e/Whispers_in_the_Well_logo.jpg/revision/latest?cb=20250507190539"
   },
   {
-    "id": "set_cc126d2d050b406aa0bbbc18268fb119",
-    "name": "EPCOT Festival of the Arts",
-    "code": "DIS",
-    "released_at": "2026-01-16",
-    "is_main": false,
-    "is_promo": true,
-    "card_count": 3,
-    "logo_url": ""
-  },
-  {
     "id": "set_dacbe79496a14ffa99567e4ae8577e49",
     "name": "Lorcana Challenge Year 3",
     "code": "C2",
@@ -167,6 +157,16 @@
     "is_main": false,
     "is_promo": true,
     "card_count": 14,
+    "logo_url": ""
+  },
+  {
+    "id": "set_cc126d2d050b406aa0bbbc18268fb119",
+    "name": "EPCOT Festival of the Arts",
+    "code": "DIS",
+    "released_at": "2026-01-16",
+    "is_main": false,
+    "is_promo": true,
+    "card_count": 3,
     "logo_url": ""
   },
   {
@@ -202,11 +202,21 @@
   {
     "id": "set_ea7d596e608340e3a383b868050b94c4",
     "name": "Format Coconut",
-    "code": "[Coconut]",
+    "code": "Coconut",
     "released_at": "2026-07-28",
     "is_main": false,
     "is_promo": true,
-    "card_count": 1,
+    "card_count": 18,
+    "logo_url": ""
+  },
+  {
+    "id": "set_b55bc6fc08484b40841f6956ba416fb2",
+    "name": "PD1",
+    "code": "PD1",
+    "released_at": "2026-07-28",
+    "is_main": false,
+    "is_promo": true,
+    "card_count": 8,
     "logo_url": ""
   }
 ]
