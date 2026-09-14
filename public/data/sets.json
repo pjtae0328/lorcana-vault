@@ -200,6 +200,16 @@
     "logo_url": ""
   },
   {
+    "id": "set_4de576a6b64146949be957ca6a382022",
+    "name": "Curator's Collection: Heroines Edition",
+    "code": "CC1",
+    "released_at": "2026-07-17",
+    "is_main": false,
+    "is_promo": true,
+    "card_count": 6,
+    "logo_url": ""
+  },
+  {
     "id": "set_ea7d596e608340e3a383b868050b94c4",
     "name": "Format Coconut",
     "code": "Coconut",
