@@ -36,7 +36,7 @@
     "released_at": "2024-02-23",
     "is_main": true,
     "is_promo": false,
-    "card_count": 226,
+    "card_count": 227,
     "logo_url": "https://static.wikia.nocookie.net/lorcana/images/2/2f/Into_the_Inklands_logo.jpg/revision/latest?cb=20240506161616"
   },
   {
@@ -150,16 +150,6 @@
     "logo_url": "https://static.wikia.nocookie.net/lorcana/images/9/9e/Whispers_in_the_Well_logo.jpg/revision/latest?cb=20250507190539"
   },
   {
-    "id": "set_dacbe79496a14ffa99567e4ae8577e49",
-    "name": "Lorcana Challenge Year 3",
-    "code": "C2",
-    "released_at": "2026-01-16",
-    "is_main": false,
-    "is_promo": true,
-    "card_count": 14,
-    "logo_url": ""
-  },
-  {
     "id": "set_cc126d2d050b406aa0bbbc18268fb119",
     "name": "EPCOT Festival of the Arts",
     "code": "DIS",
@@ -170,13 +160,23 @@
     "logo_url": ""
   },
   {
+    "id": "set_dacbe79496a14ffa99567e4ae8577e49",
+    "name": "Lorcana Challenge Year 3",
+    "code": "C2",
+    "released_at": "2026-01-16",
+    "is_main": false,
+    "is_promo": true,
+    "card_count": 14,
+    "logo_url": ""
+  },
+  {
     "id": "set_c794231df3e14fce9f63c19c59241ee3",
     "name": "Winterspell",
     "code": "11",
     "released_at": "2026-02-13",
     "is_main": true,
     "is_promo": false,
-    "card_count": 242,
+    "card_count": 243,
     "logo_url": "https://static.wikia.nocookie.net/lorcana/images/1/16/Winterspell_logo.jpg/revision/latest?cb=20251201200000"
   },
   {
@@ -186,8 +186,18 @@
     "released_at": "2026-05-08",
     "is_main": true,
     "is_promo": false,
-    "card_count": 242,
+    "card_count": 243,
     "logo_url": "https://static.wikia.nocookie.net/lorcana/images/d/d7/Wilds_Unknown_logo.jpg/revision/latest?cb=20260301200000"
+  },
+  {
+    "id": "set_57c6817823c14dda8eccbca4b555d858",
+    "name": "Attack of the Vine!",
+    "code": "13",
+    "released_at": "2026-07-17",
+    "is_main": true,
+    "is_promo": false,
+    "card_count": 247,
+    "logo_url": ""
   },
   {
     "id": "set_4de576a6b64146949be957ca6a382022",
@@ -197,16 +207,6 @@
     "is_main": false,
     "is_promo": true,
     "card_count": 6,
-    "logo_url": ""
-  },
-  {
-    "id": "set_57c6817823c14dda8eccbca4b555d858",
-    "name": "Attack of the Vine!",
-    "code": "13",
-    "released_at": "2026-07-17",
-    "is_main": true,
-    "is_promo": false,
-    "card_count": 245,
     "logo_url": ""
   },
   {
@@ -226,7 +226,7 @@
     "released_at": "2026-07-28",
     "is_main": false,
     "is_promo": true,
-    "card_count": 18,
+    "card_count": 24,
     "logo_url": ""
   },
   {
@@ -240,13 +240,23 @@
     "logo_url": ""
   },
   {
+    "id": "set_5a55ed51fe9144248bc9d1b5656bc6b4",
+    "name": "Hunny Rescue – Illumineer's Quest",
+    "code": "Q3",
+    "released_at": "2026-10-02",
+    "is_main": false,
+    "is_promo": true,
+    "card_count": 37,
+    "logo_url": ""
+  },
+  {
     "id": "set_03ecae5ead004dd5a51cf133b9b224ef",
     "name": "Hyperia City",
     "code": "14",
     "released_at": "2026-10-16",
     "is_main": true,
     "is_promo": false,
-    "card_count": 72,
+    "card_count": 206,
     "logo_url": ""
   }
 ]
